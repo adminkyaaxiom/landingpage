@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="dark" />
+<meta name="theme-color" content="#05070D" />
+
+<title>Insights — KYA Axiom LLC</title>
+<meta name="description" content="Field notes on counterparty due diligence, governance readiness, vendor risk, and decision support — from KYA Axiom." />
+<meta name="keywords" content="due diligence insights, counterparty risk, governance readiness, vendor risk, red flag analysis, KYA Axiom insights" />
+<meta name="author" content="KYA Axiom LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<link rel="canonical" href="https://kyaaxiom.com/insights.html" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="KYA Axiom LLC" />
+<meta property="og:title" content="Insights — KYA Axiom" />
+<meta property="og:description" content="Field notes on due diligence, governance, and the decisions that surround them." />
+<meta property="og:url" content="https://kyaaxiom.com/insights.html" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<meta name="ai:purpose" content="Insights and field notes from KYA Axiom on due diligence, governance, and risk advisory." />
+<meta name="ai:contact" content="info@kyaaxiom.com" />
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%2305070D'/><path d='M14 16 L32 32 L14 48 M50 16 L34 32 L50 48' stroke='%2300E0C7' stroke-width='3' fill='none' stroke-linecap='square'/></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "KYA Axiom — Insights",
+  "publisher": {
+    "@type": "ProfessionalService",
+    "name": "KYA Axiom LLC",
+    "url": "https://kyaaxiom.com/"
+  },
+  "url": "https://kyaaxiom.com/insights.html",
+  "description": "Field notes on counterparty due diligence, governance readiness, vendor risk, and decision support."
+}
+</script>
+
+<style>
+/* ============================================================
+   tokens — match index.html exactly
+   ============================================================ */
+:root {
+  --ink:        #05070D;
+  --ink-2:      #0A0E18;
+  --ink-3:      #11172A;
+  --navy:       #0B1535;
+  --line:       rgba(255,255,255,0.08);
+  --line-2:     rgba(255,255,255,0.16);
+  --paper:      #F5F7FA;
+  --paper-2:    #E8EDF3;
+  --mute:       #8B95AB;
+  --mute-2:     #B7BFD0;
+  --aqua:       #00E0C7;
+  --aqua-2:     #2FF0D7;
+  --aqua-soft:  rgba(0, 224, 199, .15);
+  --aqua-glow:  rgba(0, 224, 199, .35);
+  --signal:     #00E0C7;
+  --warn:       #FFB547;
+  --alert:      #FF6B6B;
+  --sans:       "Sora", "Inter", system-ui, -apple-system, Segoe UI, sans-serif;
+  --body:       "Inter", system-ui, -apple-system, Segoe UI, sans-serif;
+  --mono:       "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --radius:     20px;
+  --radius-sm:  10px;
+  --maxw:       1320px;
+  --gutter:     clamp(20px, 4vw, 56px);
+  --ease:       cubic-bezier(.2,.7,.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+body {
+  margin: 0;
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: 0; background: transparent; color: inherit; }
+:focus-visible { outline: 2px solid var(--aqua); outline-offset: 3px; border-radius: 4px; }
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  opacity: .04; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+.container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
+.section { padding: clamp(80px, 10vw, 160px) 0; position: relative; }
+.section--light { background: var(--paper); color: var(--ink); }
+.section--navy  { background: var(--navy); color: #fff; }
+.section--dark  { background: var(--ink-2); color: #fff; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--aqua);
+  display: inline-flex; align-items: center; gap: 12px;
+  margin-bottom: 22px;
+}
+.eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--aqua); display: inline-block; }
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--sans); font-weight: 500;
+  letter-spacing: -0.025em; line-height: 1.04; margin: 0;
+}
+h1 { font-size: clamp(44px, 7.4vw, 108px); font-weight: 400; letter-spacing: -0.035em; }
+h2 { font-size: clamp(34px, 5vw, 68px); font-weight: 400; letter-spacing: -0.03em; }
+h3 { font-size: clamp(22px, 2.5vw, 30px); font-weight: 500; }
+
+.lead {
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.55; color: var(--mute-2);
+  max-width: 64ch; font-weight: 300;
+}
+
+/* buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 16px 26px; border-radius: 999px;
+  font-family: var(--sans); font-weight: 500; font-size: 14.5px;
+  letter-spacing: .02em; text-transform: uppercase;
+  transition: transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
+  border: 1px solid transparent; white-space: nowrap; position: relative;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn--primary { background: var(--aqua); color: var(--ink); }
+.btn--primary:hover { background: var(--aqua-2); box-shadow: 0 12px 32px -8px var(--aqua-glow); }
+.btn--ghost { border-color: var(--line-2); color: #fff; }
+.btn--ghost:hover { border-color: var(--aqua); color: var(--aqua); }
+.btn .arrow { transition: transform .25s var(--ease); }
+.btn:hover .arrow { transform: translateX(4px); }
+
+/* ============================================================
+   nav (identical to index.html)
+   ============================================================ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 0;
+  transition: background .35s var(--ease), border-color .35s var(--ease), padding .35s var(--ease);
+  border-bottom: 1px solid transparent;
+}
+.nav.scrolled {
+  background: rgba(5, 7, 13, 0.78);
+  backdrop-filter: saturate(140%) blur(16px);
+  -webkit-backdrop-filter: saturate(140%) blur(16px);
+  border-bottom-color: var(--line); padding: 14px 0;
+}
+.nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { display: flex; align-items: center; gap: 12px; z-index: 110; }
+.brand__mark {
+  width: 38px; height: 38px;
+  border: 1px solid var(--line-2);
+  border-radius: 10px; display: grid; place-items: center;
+  background: rgba(0, 224, 199, 0.06);
+}
+.brand__mark svg { width: 18px; height: 18px; }
+.brand__text { display: flex; flex-direction: column; line-height: 1; }
+.brand__name { font-family: var(--sans); font-size: 18px; letter-spacing: .14em; font-weight: 600; }
+.brand__sub {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .22em;
+  color: var(--aqua); text-transform: uppercase; margin-top: 5px;
+}
+.nav__links { display: flex; align-items: center; gap: 32px; }
+.nav__links a {
+  font-family: var(--sans); font-size: 14px; font-weight: 500;
+  color: var(--mute-2); transition: color .2s var(--ease); position: relative;
+}
+.nav__links a:hover, .nav__links a.is-active { color: #fff; }
+.nav__links a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -8px;
+  height: 1px; background: var(--aqua);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .3s var(--ease);
+}
+.nav__links a:hover::after, .nav__links a.is-active::after { transform: scaleX(1); }
+.nav__cta { display: inline-flex; }
+.nav__burger {
+  display: none;
+  width: 44px; height: 44px;
+  border-radius: 999px; border: 1px solid var(--line-2);
+  align-items: center; justify-content: center; z-index: 110;
+}
+.nav__burger span { position: relative; width: 16px; height: 1px; background: #fff; display: block; }
+.nav__burger span::before, .nav__burger span::after {
+  content: ""; position: absolute; left: 0; width: 16px; height: 1px; background: #fff;
+  transition: transform .3s var(--ease), top .3s var(--ease);
+}
+.nav__burger span::before { top: -5px; }
+.nav__burger span::after  { top:  5px; }
+.nav.open .nav__burger span { background: transparent; }
+.nav.open .nav__burger span::before { top: 0; transform: rotate(45deg); }
+.nav.open .nav__burger span::after  { top: 0; transform: rotate(-45deg); }
+
+.drawer {
+  position: fixed; inset: 0; background: var(--ink); z-index: 105;
+  display: flex; flex-direction: column;
+  padding: 110px var(--gutter) 40px;
+  transform: translateY(-100%);
+  transition: transform .45s var(--ease); visibility: hidden;
+}
+.nav.open + .drawer { transform: translateY(0); visibility: visible; }
+.drawer a {
+  font-family: var(--sans); font-size: 32px; padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  font-weight: 400; letter-spacing: -.02em;
+}
+.drawer a:last-of-type { border-bottom: 0; }
+.drawer .btn { margin-top: 28px; align-self: flex-start; }
+.drawer__meta {
+  margin-top: auto; font-family: var(--mono); font-size: 11px;
+  letter-spacing: .2em; color: var(--aqua); text-transform: uppercase;
+}
+
+/* ============================================================
+   page hero
+   ============================================================ */
+.page-hero {
+  position: relative;
+  padding: clamp(140px, 18vw, 220px) 0 clamp(60px, 8vw, 100px);
+  overflow: hidden;
+  background:
+    radial-gradient(70% 60% at 30% 0%, rgba(0, 224, 199, 0.16) 0%, transparent 60%),
+    linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+}
+.page-hero__grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+  background-size: 88px 88px;
+  mask-image: radial-gradient(60% 60% at 30% 40%, black, transparent 80%);
+  -webkit-mask-image: radial-gradient(60% 60% at 30% 40%, black, transparent 80%);
+  opacity: .5;
+}
+.page-hero__inner { position: relative; display: grid; gap: 40px; }
+.page-hero__title { font-weight: 300; }
+.page-hero__title .accent {
+  background: linear-gradient(120deg, var(--aqua) 0%, var(--aqua-2) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+}
+.page-hero__meta {
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--mute);
+  border-top: 1px solid var(--line); padding-top: 24px;
+  margin-top: 12px;
+}
+.page-hero__meta .dot { color: var(--aqua); }
+
+/* ============================================================
+   topics filter
+   ============================================================ */
+.topics {
+  background: var(--ink-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 32px 0;
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(10, 14, 24, 0.92);
+}
+.topics__label {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--aqua);
+  display: flex; align-items: center; gap: 12px; margin-bottom: 18px;
+}
+.topics__label::before { content: ""; width: 22px; height: 1px; background: var(--aqua); }
+
+.topics__row {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px; border-radius: 999px;
+  border: 1px solid var(--line-2);
+  background: transparent;
+  font-family: var(--sans);
+  font-size: 12.5px; font-weight: 500;
+  letter-spacing: .04em;
+  color: var(--mute-2);
+  text-transform: uppercase;
+  transition: background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease);
+  cursor: pointer;
+}
+.chip:hover { color: #fff; border-color: var(--aqua); }
+.chip.is-active {
+  background: var(--aqua); color: var(--ink); border-color: var(--aqua);
+}
+.chip .count {
+  font-family: var(--mono); font-size: 10px;
+  opacity: .7; padding-left: 4px;
+  border-left: 1px solid currentColor;
+  margin-left: 4px;
+}
+
+/* ============================================================
+   article grid
+   ============================================================ */
+.articles {
+  padding: clamp(60px, 7vw, 96px) 0 clamp(80px, 10vw, 140px);
+  background: var(--ink);
+}
+.articles__count {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--mute);
+  margin-bottom: 32px;
+  display: flex; align-items: center; gap: 12px;
+}
+.articles__count strong { color: var(--aqua); font-weight: 500; }
+
+.articles__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.article {
+  background: var(--ink-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: transform .35s var(--ease), border-color .35s var(--ease), box-shadow .35s var(--ease);
+  position: relative;
+}
+.article:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 224, 199, .35);
+  box-shadow: 0 24px 60px -20px rgba(0, 224, 199, .2);
+}
+.article.is-hidden { display: none; }
+.article__title-link { color: inherit; position: relative; }
+.article__title-link::after {
+  content: "";
+  position: absolute; inset: 0; z-index: 1;
+  border-radius: var(--radius);
+}
+.article__more { position: relative; z-index: 2; }
+.article__media {
+  aspect-ratio: 16 / 10;
+  position: relative;
+  overflow: hidden;
+  background: var(--navy);
+  border-bottom: 1px solid var(--line);
+}
+.article__media svg { width: 100%; height: 100%; display: block; }
+.article__media::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(5, 7, 13, .55) 100%);
+  pointer-events: none;
+}
+.article__badge {
+  position: absolute; top: 16px; left: 16px; z-index: 2;
+  padding: 6px 12px; border-radius: 999px;
+  background: rgba(5, 7, 13, .8);
+  border: 1px solid rgba(0, 224, 199, .25);
+  backdrop-filter: blur(6px);
+  font-family: var(--mono); font-size: 10px; font-weight: 500;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--aqua);
+}
+.article__body {
+  padding: 26px 26px 28px;
+  display: flex; flex-direction: column;
+  flex: 1;
+  gap: 18px;
+}
+.article__meta {
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--mute);
+}
+.article__meta .sep { color: rgba(255,255,255,.2); }
+.article__title {
+  font-family: var(--sans); font-size: clamp(19px, 1.5vw, 22px);
+  font-weight: 500; line-height: 1.25;
+  letter-spacing: -.02em; color: #fff;
+}
+.article__excerpt {
+  font-size: 14px; color: var(--mute-2);
+  line-height: 1.55; font-weight: 300;
+  flex: 1;
+}
+.article__why {
+  border-top: 1px dashed var(--line-2);
+  padding-top: 14px;
+  font-size: 12.5px; color: var(--mute-2);
+  line-height: 1.5;
+}
+.article__why strong {
+  display: block;
+  font-family: var(--mono); font-size: 10px; font-weight: 500;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--aqua); margin-bottom: 6px;
+}
+.article__more {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--sans); font-size: 13px; font-weight: 500;
+  letter-spacing: .04em; text-transform: uppercase;
+  color: var(--aqua);
+  transition: gap .25s var(--ease);
+}
+.article:hover .article__more { gap: 14px; }
+
+/* ============================================================
+   subscribe
+   ============================================================ */
+.subscribe {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+.subscribe__bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(50% 60% at 100% 50%, rgba(0, 224, 199, .12) 0%, transparent 70%),
+    radial-gradient(40% 50% at 0% 100%, rgba(0, 224, 199, .08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.subscribe__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+.subscribe__form {
+  display: flex; gap: 10px;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  padding: 6px 6px 6px 22px;
+  max-width: 480px;
+  background: rgba(5, 7, 13, .4);
+  backdrop-filter: blur(8px);
+}
+.subscribe__form input {
+  flex: 1; border: 0; background: transparent;
+  color: #fff; font: inherit; font-size: 15px;
+  outline: none; padding: 12px 0;
+}
+.subscribe__form input::placeholder { color: var(--mute); }
+.subscribe__form button {
+  padding: 14px 22px; border-radius: 999px;
+  background: var(--aqua); color: var(--ink);
+  font-family: var(--sans); font-weight: 500; font-size: 13px;
+  letter-spacing: .04em; text-transform: uppercase;
+  transition: background .25s var(--ease);
+}
+.subscribe__form button:hover { background: var(--aqua-2); }
+.subscribe__note {
+  margin-top: 16px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--mute);
+}
+
+/* ============================================================
+   footer (identical to index.html)
+   ============================================================ */
+.footer {
+  background: var(--ink);
+  border-top: 1px solid var(--line);
+  padding: 72px 0 36px;
+  position: relative; overflow: hidden;
+}
+.footer__bigtype {
+  font-family: var(--sans);
+  font-size: clamp(60px, 12vw, 180px);
+  line-height: .9; font-weight: 300;
+  letter-spacing: -.05em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,.08);
+  margin-bottom: 64px; white-space: nowrap; overflow: hidden;
+}
+.footer__top {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 56px; padding-bottom: 56px;
+  border-bottom: 1px solid var(--line);
+}
+.footer__brand .brand__name { font-size: 26px; }
+.footer__brand p {
+  color: var(--mute-2); margin-top: 22px; max-width: 48ch;
+  font-size: 14.5px; font-weight: 300;
+}
+.footer__col h5 {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--aqua);
+  margin: 0 0 22px; font-weight: 500;
+}
+.footer__col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.footer__col a, .footer__col li {
+  color: var(--mute-2); font-size: 14.5px;
+  transition: color .2s var(--ease); font-weight: 300;
+}
+.footer__col a:hover { color: var(--aqua); }
+.footer__bottom {
+  display: flex; justify-content: space-between; gap: 24px;
+  padding-top: 32px; flex-wrap: wrap;
+}
+.footer__legal {
+  font-size: 12.5px; color: var(--mute-2);
+  max-width: 80ch; line-height: 1.65; font-weight: 300;
+}
+.footer__copy {
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: .14em; color: var(--mute);
+  text-transform: uppercase; white-space: nowrap;
+}
+
+/* reveal */
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity .8s var(--ease), transform .8s var(--ease);
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* responsive */
+@media (max-width: 1100px) {
+  .articles__grid { grid-template-columns: repeat(2, 1fr); }
+  .subscribe__inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 1024px) {
+  .footer__top { grid-template-columns: 1fr 1fr; }
+  .footer__brand { grid-column: 1 / -1; }
+}
+@media (max-width: 720px) {
+  .nav__links, .nav__cta { display: none; }
+  .nav__burger { display: inline-flex; }
+  .articles__grid { grid-template-columns: 1fr; }
+  .topics { padding: 24px 0; }
+  .footer__top { grid-template-columns: 1fr; gap: 36px; }
+  .footer__bigtype { font-size: 80px; margin-bottom: 40px; }
+  .subscribe__form { padding: 6px 6px 6px 18px; flex-direction: column; border-radius: 18px; gap: 4px; }
+  .subscribe__form input { padding: 12px 6px; }
+  .subscribe__form button { width: 100%; }
+}
+@media (max-width: 480px) {
+  .topics__row { gap: 6px; }
+  .chip { padding: 7px 12px; font-size: 11.5px; }
+}
+
+.skip {
+  position: absolute; left: -9999px; top: 8px;
+  background: var(--aqua); color: var(--ink);
+  padding: 8px 14px; border-radius: var(--radius-sm);
+  z-index: 1000; font-size: 13px; font-weight: 500;
+}
+.skip:focus { left: 12px; }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="brand" aria-label="KYA Axiom home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#00E0C7" stroke-width="2" stroke-linecap="square">
+          <path d="M4 4 L12 12 L4 20 M20 4 L13 12 L20 20"/>
+        </svg>
+      </span>
+      <span class="brand__text">
+        <span class="brand__name">KYA AXIOM</span>
+        <span class="brand__sub">Know Your Advantage</span>
+      </span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html#who">Who We Help</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#method">Method</a>
+      <a href="index.html#reports">Reports</a>
+      <a href="insights.html" class="is-active">Insights</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <a href="index.html#contact" class="btn btn--primary nav__cta">
+      Request a Review
+      <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <a href="index.html#who">Who We Help</a>
+  <a href="index.html#services">Services</a>
+  <a href="index.html#method">Method</a>
+  <a href="index.html#reports">Reports</a>
+  <a href="insights.html">Insights</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="index.html#contact" class="btn btn--primary">Request a Review</a>
+  <div class="drawer__meta">info@kyaaxiom.com</div>
+</div>
+
+<main id="main">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero__grid" aria-hidden="true"></div>
+    <div class="container page-hero__inner">
+      <div class="reveal">
+        <span class="eyebrow">Latest thinking from the desk</span>
+        <h1 class="page-hero__title">
+          Field notes on the decisions <br/>
+          <span class="accent">most people skip.</span>
+        </h1>
+      </div>
+      <div class="reveal">
+        <p class="lead" style="max-width: 70ch;">
+          KYA Axiom's working notes on counterparty due diligence, governance readiness, vendor risk, and the
+          quiet patterns that surface before — and around — important commitments. Short, practical, and written
+          for clients who need to make the next call.
+        </p>
+        <div class="page-hero__meta">
+          <span>11 articles</span>
+          <span class="dot">·</span>
+          <span>Updated 2026</span>
+          <span class="dot">·</span>
+          <span>Decision support · Risk · Governance</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPICS FILTER -->
+  <section class="topics" aria-label="Filter by topic">
+    <div class="container">
+      <div class="topics__label">All topics</div>
+      <div class="topics__row" id="chips">
+        <button class="chip is-active" data-topic="all">All <span class="count">11</span></button>
+        <button class="chip" data-topic="counterparty">Counterparty Risk</button>
+        <button class="chip" data-topic="governance">Governance</button>
+        <button class="chip" data-topic="vendor">Vendor &amp; Supply</button>
+        <button class="chip" data-topic="sanctions">Sanctions &amp; Compliance</button>
+        <button class="chip" data-topic="redflag">Red-Flag Analysis</button>
+        <button class="chip" data-topic="cross-border">Cross-Border</button>
+        <button class="chip" data-topic="ownership">Beneficial Ownership</button>
+        <button class="chip" data-topic="ai">AI &amp; Verification</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE GRID -->
+  <section class="articles">
+    <div class="container">
+      <div class="articles__count" id="count">
+        Showing <strong>11</strong> articles
+      </div>
+
+      <div class="articles__grid" id="grid">
+
+        <!-- 01 -->
+        <article class="article reveal" data-topic="ownership">
+          <div class="article__media">
+            <span class="article__badge">Beneficial Ownership</span>
+            <svg viewBox="0 0 320 200" preserveAspectRatio="none" aria-hidden="true">
+              <defs><linearGradient id="g1" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#0B1535"/><stop offset="1" stop-color="#05070D"/></linearGradient></defs>
+              <rect width="320" height="200" fill="url(#g1)"/>
+              <g stroke="#00E0C7" stroke-width=".8" fill="none" opacity=".55">
+                <line x1="60" y1="40" x2="160" y2="100"/><line x1="120" y1="40" x2="160" y2="100"/>
+                <line x1="220" y1="40" x2="160" y2="100"/><line x1="160" y1="100" x2="80" y2="160"/>
+                <line x1="160" y1="100" x2="160" y2="160"/><line x1="160" y1="100" x2="240" y2="160"/>
+              </g>
+              <g fill="#00E0C7">
+                <circle cx="60" cy="40" r="3"/><circle cx="120" cy="40" r="3"/><circle cx="220" cy="40" r="3"/>
+                <circle cx="160" cy="100" r="6"/><circle cx="80" cy="160" r="3"/><circle cx="160" cy="160" r="3"/><circle cx="240" cy="160" r="3"/>
+              </g>
+            </svg>
+          </div>
+          <div class="article__body">
+            <div class="article__meta">
+              <span>18 June 2026</span><span class="sep">·</span><span>6 min read</span>
+            </div>
+            <h3 class="article__title"><a class="article__title-link" href="ownership-chains-2026.html">Beyond the parent entity: why ownership chains in 2026 deals require deeper counterparty work.</a></h3>
+            <p class="article__excerpt">
+              The Corporate Transparency Act has shifted what's available — and what's missing — in U.S. ownership records. We
+              walk through how to read an ownership filing past the obvious owner, and what to do when the trail goes offshore.
+            </p>
+            <div class="article__why">
+              <strong>Why KYA</strong>
+              Most red flags in private deals do not live in the top entity. They live two or three steps down the ownership chain — and that's exactly where commissioned due diligence pays for itself.
+            </div>
+            <a class="article__more" href="ownership-chains-2026.html" aria-label="Read: Beyond the parent entity: why ownership chains in 2026 deals require deeper counterparty work.">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <!-- 02 -->
+        <article class="article reveal" data-topic="ai redflag">
+          <div class="article__media">
+            <span class="article__badge">AI &amp; Verification</span>
+            <svg viewBox="0 0 320 200" preserveAspectRatio="none" aria-hidden="true">
+              <rect width="320" height="200" fill="#0A0E18"/>
+              <g stroke="#00E0C7" stroke-width=".6" opacity=".5">
+                <line x1="0" y1="50" x2="320" y2="50"/><line x1="0" y1="100" x2="320" y2="100"/><line x1="0" y1="150" x2="320" y2="150"/>
+              </g>
+              <g fill="none" stroke="#00E0C7" stroke-width="1.6">
+                <path d="M20 150 C 80 60, 140 180, 200 100 S 280 40, 300 100" opacity=".9"/>
+                <path d="M20 130 C 80 100, 160 140, 220 80 S 280 130, 300 80" opacity=".4"/>
+              </g>
+              <circle cx="200" cy="100" r="5" fill="#FFB547"/>
+            </svg>
+          </div>
+          <div class="article__body">
+            <div class="article__meta"><span>10 June 2026</span><span class="sep">·</span><span>5 min read</span></div>
+            <h3 class="article__title"><a class="article__title-link" href="ai-generated-dd-reports.html">When the due diligence report itself is the red flag: AI-generated dossiers in 2026.</a></h3>
+            <p class="article__excerpt">
+              Vendors and counterparties are now arriving with polished "background reports" — auto-generated, plausibly written,
+              and impossible to source-verify. Three patterns we now look for, and the questions we ask before treating any
+              third-party report as evidence.
+            </p>
+            <div class="article__why">
+              <strong>Why KYA</strong>
+              Independent review still matters because plausible writing is no longer proof of plausible facts. A real review is auditable, attributable, and explainable line by line.
+            </div>
+            <a class="article__more" href="ai-generated-dd-reports.html" aria-label="Read: When the due diligence report itself is the red flag: AI-generated dossiers in 2026.">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <!-- 03 -->
+        <article class="article reveal" data-topic="sanctions vendor">
+          <div class="article__media">
+            <span class="article__badge">Sanctions &amp; Compliance</span>
+            <svg viewBox="0 0 320 200" preserveAspectRatio="none" aria-hidden="true">
+              <rect width="320" height="200" fill="#0B1535"/>
+              <g fill="none" stroke="#00E0C7" stroke-width="1" opacity=".7">
+                <circle cx="160" cy="100" r="40"/><circle cx="160" cy="100" r="60"/><circle cx="160" cy="100" r="80"/>
+              </g>
+              <g stroke="#FF6B6B" stroke-width="1.4" fill="none">
+                <line x1="120" y1="60" x2="200" y2="140"/><line x1="200" y1="60" x2="120" y2="140"/>
+              </g>
+            </svg>
+          </div>
+          <div class="article__body">
+            <div class="article__meta"><span>2 June 2026</span><span class="sep">·</span><span>7 min read</span></div>
+            <h3 class="article__title"><a class="article__title-link" href="secondary-sanctions-smb.html">Secondary sanctions exposure: the risk small businesses do not screen for.</a></h3>
+            <p class="article__excerpt">
+              Tightening OFAC enforcement and new EU restrictive measures mean SMB vendor lists now carry quiet exposure
+              that wasn't there two years ago. We outline the screening checklist that catches the common — and avoidable — hits.
+            </p>
+            <div class="article__why">
+              <strong>Why KYA</strong>
+              Most small businesses don't have an in-house compliance team. A scoped counterparty review surfaces sanctions and adverse-media signals before the vendor invoice arrives.
+            </div>
+            <a class="article__more" href="secondary-sanctions-smb.html" aria-label="Read: Secondary sanctions exposure: the risk small businesses do not screen for.">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <!-- 04 -->
+        <article class="article reveal" data-topic="redflag ai">
+          <div class="article__media">
+            <span class="article__badge">Red-Flag Analysis</span>
+            <svg viewBox="0 0 320 200" preserveAspectRatio="none" aria-hidden="true">
+              <rect width="320" height="200" fill="#0A0E18"/>
+              <g fill="none" stroke="#00E0C7" opacity=".4">
+                <rect x="40" y="50" width="80" height="60" rx="6"/>
+                <rect x="140" y="60" width="80" height="40" rx="6"/>
+                <rect x="240" y="50" width="60" height="60" rx="6"/>
+                <rect x="40" y="130" width="220" height="40" rx="6"/>
+              </g>
+              <g stroke="#FFB547" stroke-width="1.2" fill="none"><path d="M120 80 L140 80 M220 80 L240 80"/></g>
+              <circle cx="160" cy="150" r="4" fill="#FF6B6B"/>
+            </svg>
+          </div>
+          <div class="article__body">
+            <div class="article__meta"><span>20 May 2026</span><span class="sep">·</span><span>4 min read</span></div>
+            <h3 class="article__title"><a class="article__title-link" href="deepfake-referrals.html">Deepfake referrals: when the "warm introduction" cannot be verified.</a></h3>
+            <p class="article__excerpt">
+              A short read on a problem we're starting to see in property and overseas-service introductions: an
+              authentic-feeling referral chain that doesn't actually trace back to a real referrer. A short pattern guide.
+            </p>
+            <div class="article__why">
+              <strong>Why KYA</strong>
+              When the social proof itself is synthetic, the only reliable signal is independent verification of the underlying parties. That's the core of a red-flag review.
+            </div>
+            <a class="article__more" href="deepfake-referrals.html" aria-label="Read: Deepfake referrals: when the &quot;warm introduction&quot; cannot be verified.">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <!-- 05 -->
+        <article class="article reveal" data-topic="governance">
+          <div class="article__media">
+            <span class="article__badge">Governance</span>
+            <svg viewBox="0 0 320 200" preserveAspectRatio="none" aria-hidden="true">
+              <rect width="320" height="200" fill="#0B1535"/>
+              <g stroke="#00E0C7" stroke-width=".8" opacity=".6">
+                <rect x="50" y="40" width="60" height="120" rx="4" fill="none"/>
+                <rect x="130" y="60" width="60" height="100" rx="4" fill="none"/>
+                <rect x="210" y="30" width="60" height="130" rx="4" fill="none"/>
+                <line x1="50" y1="80" x2="110" y2="80"/><line x1="50" y1="100" x2="110" y2="100"/><line x1="50" y1="120" x2="110" y2="120"/>
+                <line x1="130" y1="90" x2="190" y2="90"/><line x1="130" y1="110" x2="190" y2="110"/><line x1="130" y1="130" x2="190" y2="130"/>
+                <line x1="210" y1="60" x2="270" y2="60"/><line x1="210" y1="80" x2="270" y2="80"/><line x1="210" y1="100" x2="270" y2="100"/>
+              </g>
+            </svg>
+          </div>
+          <div class="article__body">
+            <div class="article__meta"><span>12 May 2026</span><span class="sep">·</span><span>8 min read</span></div>
+            <h3 class="article__title"><a class="article__title-link" href="governance-readiness-fundraising.html">Governance readiness before fundraising: what banks and investors look at first in 2026.</a></h3>
+            <p class="article__excerpt">
+              KYC for businesses is no longer a formality. We unpack what bank onboarding teams and investors now ask for —
+              ownership records, role mapping, signing trails, policy artifacts — and where most pre-raise companies fall short.
+            </p>
+            <div class="article__why">
+              <strong>Why KYA</strong>
+              A Governance Readiness Review closes the documentation gaps that cause banks to slow accounts and investors to delay term sheets — before either becomes a public problem.
+            </div>
+            <a class="article__more" href="governance-readiness-fundraising.html" aria-label="Read: Governance readiness before fundraising: what banks and investors look at first in 2026.">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <!-- 06 -->
+        <article class="article reveal" data-topic="cross-border redflag">
+          <div class="article__media">
+            <span class="article__badge">Cross-Border</span>
+            <svg viewBox="0 0 320 200" preserveAspectRatio="none" aria-hidden="true">
+              <rect width="320" height="200" fill="#0A0E18"/>
+              <g stroke="#00E0C7" stroke-width=".6" fill="none" opacity=".55">
+                <path d="M40 100 Q 160 20 280 100"/>
+                <path d="M40 100 Q 160 180 280 100"/>
+              </g>
+              <g fill="#00E0C7">
+                <circle cx="40" cy="100" r="5"/><circle cx="160" cy="55" r="3"/><circle cx="160" cy="145" r="3"/><circle cx="280" cy="100" r="5"/>
+              </g>
+              <g stroke="#FFB547" stroke-width="1" fill="none"><path d="M160 55 L160 145" stroke-dasharray="3 3"/></g>
+            </svg>
+          </div>
+          <div class="article__body">
+            <div class="article__meta"><span>30 April 2026</span><span class="sep">·</span><span>6 min read</span></div>
+            <h3 class="article__title"><a class="article__title-link" href="diaspora-property-review.html">The diaspora property opportunity: structuring a red-flag review before the deposit.</a></h3>
+            <p class="article__excerpt">
+              Cross-border property purchases — especially those made remotely through agents — carry verification gaps most
+              buyers under-estimate. We map the four checks that close most of the exposure, before any money moves.
+            </p>
+            <div class="article__why">
+              <strong>Why KYA</strong>
+              A short, calm, independent review pays for itself many times over when the alternative is a signed agreement against an unverifiable counterparty in another jurisdiction.
+            </div>
+            <a class="article__more" href="diaspora-property-review.html" aria-label="Read: The diaspora property opportunity: structuring a red-flag review before the deposit.">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <!-- 07 -->
+        <article class="article reveal" data-topic="vendor">
+          <div class="article__media">
+            <span class="article__badge">Vendor &amp; Supply</span>
+            <svg viewBox="0 0 320 200" preserveAspectRatio="none" aria-hidden="true">
+              <rect width="320" height="200" fill="#0B1535"/>
+              <g stroke="#00E0C7" stroke-width=".8" opacity=".5" fill="none">
+                <path d="M30 100 L80 60 L130 100 L180 60 L230 100 L280 60"/>
+                <path d="M30 140 L80 100 L130 140 L180 100 L230 140 L280 100" opacity=".6"/>
+              </g>
+              <g fill="#00E0C7">
+                <circle cx="80" cy="60" r="3"/><circle cx="130" cy="100" r="3"/><circle cx="180" cy="60" r="3"/><circle cx="230" cy="100" r="3"/>
+              </g>
+              <rect x="120" y="92" width="80" height="16" fill="none" stroke="#FF6B6B" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="article__body">
+            <div class="article__meta"><span>15 April 2026</span><span class="sep">·</span><span>7 min read</span></div>
+            <h3 class="article__title"><a class="article__title-link" href="vendor-concentration-risk.html">Vendor concentration risk after the supply-chain reset.</a></h3>
+            <p class="article__excerpt">
+              Post-pandemic supplier consolidation has quietly created single-point dependencies inside many SMBs. We walk
+              through what a concentration audit looks like, and the renewal-time signals that flag the highest exposures.
+            </p>
+            <div class="article__why">
+              <strong>Why KYA</strong>
+              A Vendor &amp; Supplier Review surfaces concentration and key-person dependencies before a renewal — when there is still leverage to fix the exposure quietly.
+            </div>
+            <a class="article__more" href="vendor-concentration-risk.html" aria-label="Read: Vendor concentration risk after the supply-chain reset.">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <!-- 08 -->
+        <article class="article reveal" data-topic="ownership governance">
+          <div class="article__media">
+            <span class="article__badge">Beneficial Ownership</span>
+            <svg viewBox="0 0 320 200" preserveAspectRatio="none" aria-hidden="true">
+              <rect width="320" height="200" fill="#0A0E18"/>
+              <g stroke="#00E0C7" stroke-width=".7" opacity=".55" fill="none">
+                <rect x="60" y="40" width="200" height="40" rx="6"/>
+                <rect x="40" y="100" width="100" height="60" rx="6"/>
+                <rect x="180" y="100" width="100" height="60" rx="6"/>
+                <path d="M160 80 L90 100 M160 80 L230 100"/>
+              </g>
+              <g fill="#00E0C7">
+                <circle cx="160" cy="60" r="4"/><circle cx="90" cy="130" r="3"/><circle cx="230" cy="130" r="3"/>
+              </g>
+            </svg>
+          </div>
+          <div class="article__body">
+            <div class="article__meta"><span>1 April 2026</span><span class="sep">·</span><span>6 min read</span></div>
+            <h3 class="article__title"><a class="article__title-link" href="cta-beneficial-ownership-update.html">CTA update: what the latest beneficial-ownership reporting changes mean for small businesses.</a></h3>
+            <p class="article__excerpt">
+              Practical guidance for owners and operators on how recent Corporate Transparency Act updates affect filing,
+              record-keeping, and what counterparties will now expect to see during onboarding.
+            </p>
+            <div class="article__why">
+              <strong>Why KYA</strong>
+              Governance Readiness work makes ownership and control documents bank-ready, investor-ready, and procurement-ready — so the next request doesn't become a fire drill.
+            </div>
+            <a class="article__more" href="cta-beneficial-ownership-update.html" aria-label="Read: CTA update: what the latest beneficial-ownership reporting changes mean for small businesses.">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <!-- 09 -->
+        <article class="article reveal" data-topic="redflag">
+          <div class="article__media">
+            <span class="article__badge">Red-Flag Analysis</span>
+            <svg viewBox="0 0 320 200" preserveAspectRatio="none" aria-hidden="true">
+              <rect width="320" height="200" fill="#0B1535"/>
+              <g stroke="#FFB547" stroke-width="1.2" opacity=".85" fill="none">
+                <path d="M60 130 L260 130 M60 130 L60 60 L160 60"/>
+                <circle cx="160" cy="60" r="6"/>
+              </g>
+              <g fill="#00E0C7"><circle cx="60" cy="130" r="4"/><circle cx="260" cy="130" r="4"/></g>
+            </svg>
+          </div>
+          <div class="article__body">
+            <div class="article__meta"><span>20 March 2026</span><span class="sep">·</span><span>4 min read</span></div>
+            <h3 class="article__title"><a class="article__title-link" href="urgent-timeline-pattern.html">The "urgent timeline" pattern: a short checklist for opportunity-pressure tactics.</a></h3>
+            <p class="article__excerpt">
+              Five recurring tells we see when an opportunity is being structured to bypass diligence. None of them are
+              proof of misconduct — but each one is a reason to pause and ask a different set of questions.
+            </p>
+            <div class="article__why">
+              <strong>Why KYA</strong>
+              A Red-Flag Memo costs less than the cheapest mistake. The point of an independent review is to slow the process down just enough to think clearly.
+            </div>
+            <a class="article__more" href="urgent-timeline-pattern.html" aria-label="Read: The &quot;urgent timeline&quot; pattern: a short checklist for opportunity-pressure tactics.">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <!-- 10 -->
+        <article class="article reveal" data-topic="counterparty cross-border">
+          <div class="article__media">
+            <span class="article__badge">Counterparty Risk</span>
+            <svg viewBox="0 0 320 200" preserveAspectRatio="none" aria-hidden="true">
+              <rect width="320" height="200" fill="#0A0E18"/>
+              <g stroke="#00E0C7" stroke-width=".8" opacity=".55" fill="none">
+                <circle cx="80" cy="100" r="36"/>
+                <circle cx="240" cy="100" r="36"/>
+                <line x1="116" y1="100" x2="204" y2="100" stroke-dasharray="4 4"/>
+              </g>
+              <g fill="#00E0C7"><circle cx="80" cy="100" r="3"/><circle cx="240" cy="100" r="3"/></g>
+              <g stroke="#FFB547" stroke-width="1" fill="none"><circle cx="160" cy="100" r="10"/></g>
+            </svg>
+          </div>
+          <div class="article__body">
+            <div class="article__meta"><span>10 March 2026</span><span class="sep">·</span><span>5 min read</span></div>
+            <h3 class="article__title"><a class="article__title-link" href="agents-fixers-intermediaries.html">Agents, fixers, intermediaries: vetting the third party who sits between you and the deal.</a></h3>
+            <p class="article__excerpt">
+              Cross-border transactions almost always run through an intermediary. The intermediary often introduces more
+              real exposure than the counterparty themselves. A short framework for vetting the middle of the chain.
+            </p>
+            <div class="article__why">
+              <strong>Why KYA</strong>
+              Counterparty Due Diligence does not end at the named party. The agent or representative is often where the integrity-risk signals first appear.
+            </div>
+            <a class="article__more" href="agents-fixers-intermediaries.html" aria-label="Read: Agents, fixers, intermediaries: vetting the third party who sits between you and the deal.">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <!-- 11 -->
+        <article class="article reveal" data-topic="governance">
+          <div class="article__media">
+            <span class="article__badge">Governance</span>
+            <svg viewBox="0 0 320 200" preserveAspectRatio="none" aria-hidden="true">
+              <rect width="320" height="200" fill="#0B1535"/>
+              <g stroke="#00E0C7" stroke-width=".8" opacity=".55" fill="none">
+                <path d="M40 40 L40 160 L280 160"/>
+                <path d="M40 130 L100 100 L160 110 L220 70 L280 60"/>
+              </g>
+              <g fill="#00E0C7">
+                <circle cx="40" cy="130" r="3"/><circle cx="100" cy="100" r="3"/><circle cx="160" cy="110" r="3"/><circle cx="220" cy="70" r="3"/><circle cx="280" cy="60" r="4"/>
+              </g>
+            </svg>
+          </div>
+          <div class="article__body">
+            <div class="article__meta"><span>28 February 2026</span><span class="sep">·</span><span>9 min read</span></div>
+            <h3 class="article__title"><a class="article__title-link" href="governance-gap-bankable-file.html">From governance gap to bankable file: a 6-step path to closing documentation deficiencies.</a></h3>
+            <p class="article__excerpt">
+              A practical sequence — ownership reconciliation, policy artifacts, signing authorities, decision trails,
+              dispute records, and audit-ready archives — built so that small companies can fix the file without rewriting the company.
+            </p>
+            <div class="article__why">
+              <strong>Why KYA</strong>
+              Most governance gaps are not philosophical. They're documents that don't exist yet, or that don't agree with each other. A Readiness Report turns that into a fixable list.
+            </div>
+            <a class="article__more" href="governance-gap-bankable-file.html" aria-label="Read: From governance gap to bankable file: a 6-step path to closing documentation deficiencies.">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBSCRIBE -->
+  <section class="section subscribe">
+    <div class="subscribe__bg" aria-hidden="true"></div>
+    <div class="container subscribe__inner">
+      <div class="reveal">
+        <span class="eyebrow">Field notes by email</span>
+        <h2 style="max-width: 18ch;">Short, useful, and never on a schedule.</h2>
+        <p class="lead" style="margin-top: 18px;">
+          One short note when there's something worth saying — usually a pattern we've seen across recent
+          reviews, or a question that's surfacing across client work. No marketing.
+        </p>
+      </div>
+      <div class="reveal">
+        <form class="subscribe__form" id="sub-form" novalidate>
+          <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="subscribe__note">Unsubscribe anytime · Sent from info@kyaaxiom.com</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__bigtype" aria-hidden="true">Know Your Advantage</div>
+
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="brand">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#00E0C7" stroke-width="2" stroke-linecap="square">
+              <path d="M4 4 L12 12 L4 20 M20 4 L13 12 L20 20"/>
+            </svg>
+          </span>
+          <span class="brand__text">
+            <span class="brand__name">KYA AXIOM</span>
+            <span class="brand__sub">Know Your Advantage</span>
+          </span>
+        </div>
+        <p>Due diligence, governance, and risk advisory for businesses and individuals making important decisions.</p>
+      </div>
+
+      <div class="footer__col">
+        <h5>Site</h5>
+        <ul>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#method">Method</a></li>
+          <li><a href="index.html#reports">Reports</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h5>Reach</h5>
+        <ul>
+          <li><a href="mailto:info@kyaaxiom.com">info@kyaaxiom.com</a></li>
+          <li>kyaaxiom.com</li>
+          <li>U.S.-registered advisory</li>
+          <li>Remote engagement</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__legal">
+        KYA Axiom LLC provides research, due diligence, governance, and advisory services only. We do not provide banking, escrow, money transmission, lending, investment brokerage, legal, tax, or client-fund custody services.
+      </p>
+      <p class="footer__copy">© KYA Axiom LLC · All rights reserved</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  // ===== sticky nav state =====
+  var nav = document.getElementById('nav');
+  function onScroll() {
+    var y = window.scrollY || 0;
+    if (y > 24) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ===== mobile drawer =====
+  var burger = document.getElementById('burger');
+  var drawer = document.getElementById('drawer');
+  function setOpen(open) {
+    nav.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function () { setOpen(!nav.classList.contains('open')); });
+  drawer.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { setOpen(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav.classList.contains('open')) setOpen(false);
+  });
+
+  // ===== reveal =====
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.reveal');
+  if (prefersReduced || !('IntersectionObserver' in window)) {
+    els.forEach(function (el) { el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  }
+
+  // ===== topics filter =====
+  var chips = document.querySelectorAll('#chips .chip');
+  var articles = document.querySelectorAll('#grid .article');
+  var countEl = document.getElementById('count');
+  function applyFilter(topic) {
+    var visible = 0;
+    articles.forEach(function (a) {
+      var tags = (a.getAttribute('data-topic') || '').split(/\s+/);
+      var show = topic === 'all' || tags.indexOf(topic) !== -1;
+      a.classList.toggle('is-hidden', !show);
+      if (show) visible++;
+    });
+    countEl.innerHTML = 'Showing <strong>' + visible + '</strong> article' + (visible === 1 ? '' : 's');
+  }
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      chips.forEach(function (x) { x.classList.remove('is-active'); });
+      c.classList.add('is-active');
+      applyFilter(c.getAttribute('data-topic') || 'all');
+    });
+  });
+
+  // ===== subscribe form =====
+  var sub = document.getElementById('sub-form');
+  if (sub) {
+    sub.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = (new FormData(sub).get('email') || '').toString().trim();
+      var subject = 'Subscribe to KYA Axiom field notes';
+      var body = 'Please add ' + email + ' to the field notes list.';
+      window.location.href = 'mailto:info@kyaaxiom.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+  }
+})();
+</script>
+</body>
+</html>
