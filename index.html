@@ -1878,47 +1878,54 @@ document.addEventListener('DOMContentLoaded', () => {
           </dl>
         </div>
 
-        <form class="form reveal" id="kya-form" novalidate aria-label="Request a review">
-          <div class="field">
-            <label for="f-name">Name</label>
-            <input id="f-name" name="name" type="text" required autocomplete="name" />
-          </div>
-          <div class="field">
-            <label for="f-email">Email</label>
-            <input id="f-email" name="email" type="email" required autocomplete="email" />
-          </div>
-          <div class="field">
-            <label for="f-type">Client type</label>
-            <select id="f-type" name="type">
-              <option>Business</option>
-              <option>Individual</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="f-timeline">Timeline</label>
-            <select id="f-timeline" name="timeline">
-              <option>This week</option>
-              <option>Within 2 weeks</option>
-              <option>Within a month</option>
-              <option>Exploratory</option>
-            </select>
-          </div>
-          <div class="field field--full">
-            <label for="f-subject">What are you reviewing?</label>
-            <input id="f-subject" name="subject" type="text" placeholder="e.g. Counterparty introduced through a referral; overseas service provider; new vendor onboarding" />
-          </div>
-          <div class="field field--full">
-            <label for="f-message">Message</label>
-            <textarea id="f-message" name="message" placeholder="Brief context, the decision in front of you, and any concerns you already have."></textarea>
-          </div>
-          <div class="field--actions">
-            <button type="submit" class="btn btn--primary">
-              Send via email
-              <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </button>
-            <p class="form__note">Submitting opens your email client with a pre-filled message to <a href="mailto:info@kyaaxiom.com">info@kyaaxiom.com</a>. Or email us directly.</p>
-          </div>
-        </form>
+        <form action="https://crm.zoho.com/crm/WebToLeadForm" method="POST" id="kya-contact-form" class="contact-form" name="WebToLeads7474451000000610605" accept-charset="UTF-8">
+  
+		  <!-- 1. Zoho Mandatory Hidden Tracking Fields (Do Not Remove) -->
+		  <input type="hidden" name="xnQsjsdp" value="58659d2b5a9bf101b1344144374444590c18032f717ad22516a2c6cf1f7d7836">
+		  <input type="hidden" name="zc_gad" value="">
+		  <input type="hidden" name="xmIwtLD" value="2cde42615b6e06e0120c5900b256f8448d783c63ae2e89fa2d11490cb4f5dc9634fb7071e15e59b2e9a39656389e1cbb">
+		  <input type="hidden" name="actionType" value="TGVhZHM=">
+		  <input type="hidden" name="returnURL" value="https://kyaaxiom.com/">
+		  
+		  <!-- 2. Zoho Honeypot (Anti-Spam hidden field) -->
+		  <input type="text" style="display: none;" name="aG9uZXlwb3Q" value="">
+
+		  <!-- 3. Your Premium Visible Fields (Mapped to Zoho's exact API names) -->
+		  
+		  <div class="form-row">
+			<input type="text" name="First Name" placeholder="First Name" required>
+			<input type="text" name="Last Name" placeholder="Last Name" required>
+		  </div>
+
+		  <input type="email" name="Email" placeholder="Email Address" required>
+		  
+		  <!-- Client Type maps to Zoho's custom field LEADCF2 -->
+		  <select name="LEADCF2" required>
+			<option value="" disabled selected>Client type</option>
+			<option value="Business">Business</option>
+			<option value="Individual">Individual</option>
+		  </select>
+
+		  <!-- Timeline maps to Zoho's custom field LEADCF3 -->
+		  <select name="LEADCF3" required>
+			<option value="" disabled selected>Timeline</option>
+			<option value="This week">This week</option>
+			<option value="Within 2 weeks">Within 2 weeks</option>
+			<option value="Within a month">Within a month</option>
+			<option value="Exploratory">Exploratory</option>
+		  </select>
+
+		  <!-- Message maps to Zoho's custom field LEADCF1 -->
+		  <textarea name="LEADCF1" placeholder="What are you reviewing?" required></textarea>
+
+		  <!-- Premium Submit Button -->
+		  <button type="submit" class="btn-primary">Request Confidential Review</button>
+		  
+		</form>
+		
+		
+		
+
       </div>
     </div>
   </section>
@@ -2062,5 +2069,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 })();
 </script>
+<!-- Zoho Analytics Tracking -->
+<script id="wf_anal" src="https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=cf1904d2fc6d3031153b67406f1118f2224b27036cfb5745d712f339a7f0dc042cf711fd319be862998b8728321e6055gidffc754351c838376812830268a6353d8abfc0fe106d71c3c69113b8766f42ddfgiddf0c6301c0d8acfea12b6dc52d2cea829727e00c5c5c67ce20701bebbae5de3fgidb8c8fe1e7e1402d85f594be62c66718518d3a613f26b03963fa05d7cd552b950&tw=91f98ded4b4f59a454a6eeb90c6f4b692b6d9a86dff27d4a756d8e3afc315996"></script>
 </body>
 </html>
