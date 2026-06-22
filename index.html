@@ -1878,50 +1878,66 @@ document.addEventListener('DOMContentLoaded', () => {
           </dl>
         </div>
 
-        <form action="https://crm.zoho.com/crm/WebToLeadForm" method="POST" id="kya-contact-form" class="contact-form" name="WebToLeads7474451000000610605" accept-charset="UTF-8">
-  
-		  <!-- 1. Zoho Mandatory Hidden Tracking Fields (Do Not Remove) -->
-		  <input type="hidden" name="xnQsjsdp" value="58659d2b5a9bf101b1344144374444590c18032f717ad22516a2c6cf1f7d7836">
-		  <input type="hidden" name="zc_gad" value="">
-		  <input type="hidden" name="xmIwtLD" value="2cde42615b6e06e0120c5900b256f8448d783c63ae2e89fa2d11490cb4f5dc9634fb7071e15e59b2e9a39656389e1cbb">
-		  <input type="hidden" name="actionType" value="TGVhZHM=">
-		  <input type="hidden" name="returnURL" value="https://kyaaxiom.com/">
-		  
-		  <!-- 2. Zoho Honeypot (Anti-Spam hidden field) -->
-		  <input type="text" style="display: none;" name="aG9uZXlwb3Q" value="">
+        <form action="https://crm.zoho.com/crm/WebToLeadForm" method="POST" id="kya-contact-form" class="form reveal" name="WebToLeads7474451000000610605" accept-charset="UTF-8" novalidate>
 
-		  <!-- 3. Your Premium Visible Fields (Mapped to Zoho's exact API names) -->
-		  
-		  <div class="form-row">
-			<input type="text" name="First Name" placeholder="First Name" required>
-			<input type="text" name="Last Name" placeholder="Last Name" required>
-		  </div>
+          <!-- 1. Zoho Mandatory Hidden Tracking Fields (Do Not Remove) -->
+          <input type="hidden" name="xnQsjsdp" value="58659d2b5a9bf101b1344144374444590c18032f717ad22516a2c6cf1f7d7836">
+          <input type="hidden" name="zc_gad" value="">
+          <input type="hidden" name="xmIwtLD" value="2cde42615b6e06e0120c5900b256f8448d783c63ae2e89fa2d11490cb4f5dc9634fb7071e15e59b2e9a39656389e1cbb">
+          <input type="hidden" name="actionType" value="TGVhZHM=">
+          <input type="hidden" name="returnURL" value="https://kyaaxiom.com/">
 
-		  <input type="email" name="Email" placeholder="Email Address" required>
-		  
-		  <!-- Client Type maps to Zoho's custom field LEADCF2 -->
-		  <select name="LEADCF2" required>
-			<option value="" disabled selected>Client type</option>
-			<option value="Business">Business</option>
-			<option value="Individual">Individual</option>
-		  </select>
+          <!-- 2. Zoho Honeypot (Anti-Spam hidden field) -->
+          <input type="text" style="display:none" name="aG9uZXlwb3Q" value="" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-		  <!-- Timeline maps to Zoho's custom field LEADCF3 -->
-		  <select name="LEADCF3" required>
-			<option value="" disabled selected>Timeline</option>
-			<option value="This week">This week</option>
-			<option value="Within 2 weeks">Within 2 weeks</option>
-			<option value="Within a month">Within a month</option>
-			<option value="Exploratory">Exploratory</option>
-		  </select>
+          <!-- 3. Visible Fields (mapped to Zoho's exact API names) -->
+          <div class="field">
+            <label for="f-first">First name</label>
+            <input id="f-first" type="text" name="First Name" autocomplete="given-name" required>
+          </div>
+          <div class="field">
+            <label for="f-last">Last name</label>
+            <input id="f-last" type="text" name="Last Name" autocomplete="family-name" required>
+          </div>
 
-		  <!-- Message maps to Zoho's custom field LEADCF1 -->
-		  <textarea name="LEADCF1" placeholder="What are you reviewing?" required></textarea>
+          <div class="field field--full">
+            <label for="f-email">Email</label>
+            <input id="f-email" type="email" name="Email" autocomplete="email" required>
+          </div>
 
-		  <!-- Premium Submit Button -->
-		  <button type="submit" class="btn-primary">Request Confidential Review</button>
-		  
-		</form>
+          <div class="field">
+            <label for="f-type">Client type</label>
+            <select id="f-type" name="LEADCF2" required>
+              <option value="" disabled selected>Select…</option>
+              <option value="Business">Business</option>
+              <option value="Individual">Individual</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-timeline">Timeline</label>
+            <select id="f-timeline" name="LEADCF3" required>
+              <option value="" disabled selected>Select…</option>
+              <option value="This week">This week</option>
+              <option value="Within 2 weeks">Within 2 weeks</option>
+              <option value="Within a month">Within a month</option>
+              <option value="Exploratory">Exploratory</option>
+            </select>
+          </div>
+
+          <div class="field field--full">
+            <label for="f-message">What are you reviewing?</label>
+            <textarea id="f-message" name="LEADCF1" placeholder="Brief context, the decision in front of you, and any concerns you already have." required></textarea>
+          </div>
+
+          <div class="field--actions">
+            <button type="submit" class="btn btn--primary">
+              Request Confidential Review
+              <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <p class="form__note">Confidential by default · 1-business-day response · or email <a href="mailto:info@kyaaxiom.com">info@kyaaxiom.com</a> directly.</p>
+          </div>
+        </form>
 		
 		
 		
