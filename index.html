@@ -1230,9 +1230,93 @@ h4 { font-size: clamp(18px, 1.6vw, 22px); font-weight: 500; }
   z-index: 1000; font-size: 13px; font-weight: 500;
 }
 .skip:focus { left: 12px; }
+
+/* --- Text Rotator Styles --- */
+
+/* The Rotator Container (Prevents Layout Shift) */
+.word-rotator {
+  display: inline-block;
+  position: relative;
+  vertical-align: baseline; 
+  
+  /* Smoothly animates width so the rest of the sentence glides */
+  transition: width 0.8s cubic-bezier(0.65, 0, 0.35, 1); 
+  overflow: visible; 
+}
+
+/* The Words (Inactive State) */
+.word-rotator .word {
+  display: inline-block;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  /* The "Blur Fade & Slide" Effect */
+  transform: translateY(30%) scale(0.96);
+  filter: blur(10px);
+  
+  transition: 
+    opacity 0.8s ease, 
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), 
+    filter 0.8s ease;
+    
+  white-space: nowrap;
+  pointer-events: none;
+  will-change: transform, opacity, filter; /* GPU acceleration for smooth blur */
+}
+
+/* The Active Word */
+.word-rotator .word.active {
+  opacity: 1;
+  position: relative; /* Pushes into the document flow to dictate height */
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+  pointer-events: auto;
+}
+
 </style>
 </head>
 <body>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const rotator = document.querySelector('.word-rotator');
+  const words = document.querySelectorAll('.word-rotator .word');
+  
+  if (!rotator || words.length === 0) return;
+
+  let currentIndex = 0;
+
+  // Measures the natural width of the word to prevent layout shift
+  const updateWidth = (index) => {
+    const targetWidth = words[index].scrollWidth;
+    rotator.style.width = `${targetWidth}px`;
+  };
+
+  // Initialize first word
+  words[0].classList.add('active');
+  updateWidth(0);
+
+  // Rotate every 3.5 seconds
+  setInterval(() => {
+    const currentWord = words[currentIndex];
+    currentIndex = (currentIndex + 1) % words.length;
+    const nextWord = words[currentIndex];
+
+    // 1. Animate container width FIRST (glides smoothly)
+    updateWidth(currentIndex);
+
+    // 2. Swap active classes (triggers CSS transitions)
+    currentWord.classList.remove('active');
+    nextWord.classList.add('active');
+
+  }, 3500);
+
+  // Recalculate width on window resize for responsive fonts
+  window.addEventListener('resize', () => updateWidth(currentIndex));
+});
+</script>
 
 <a href="#main" class="skip">Skip to content</a>
 
@@ -1325,14 +1409,20 @@ h4 { font-size: clamp(18px, 1.6vw, 22px); font-weight: 500; }
       <div class="hero__content">
         <div class="">
           <span class="dot" aria-hidden="true"></span>
-          
         </div>
 
-        <h1 class="hero__headline">
-          Know your <span class="accent">advantage</span><br/>
-          before you commit.
-        </h1>
-
+		<h1 class="hero__headline">
+		  Know your 
+		  <span class="word-rotator" aria-live="polite">
+			<span class="word accent active">advantage</span>
+			<span class="word accent">counterparty</span>
+			<span class="word accent">exposure</span>
+			<span class="word accent">leverage</span>
+		  </span>
+		  <br>
+		  before you commit.
+		</h1>
+	
         <p class="hero__sub">
           Independent due diligence and governance advisory for businesses and individuals making important decisions about vendors, counterparties, service providers, projects, partnerships, and opportunities.
         </p>
